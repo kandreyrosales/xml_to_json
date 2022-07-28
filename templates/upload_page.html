@@ -1,0 +1,13 @@
+{% load static %}
+
+{% block content %}
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="file">
+    <button type="submit">Upload XML file</button>
+  </form>
+
+  {% if message %}
+    <p>Error: {{ message }}</p>
+  {% endif %}
+{% endblock %}
